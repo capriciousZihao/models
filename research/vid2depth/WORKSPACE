@@ -92,8 +92,8 @@ new_http_archive(
 # HDF5
 new_http_archive(
     name = "hdf5",
-    url = "https://support.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.10.1.tar.gz",
-    strip_prefix = "hdf5-1.10.1",
+    url = "https://support.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.10.5.tar.gz",
+    strip_prefix = "hdf5-1.10.5",
     build_file = "third_party/hdf5.BUILD",
 )
 
@@ -113,8 +113,9 @@ new_http_archive(
 
 git_repository(
     name = "com_github_nelhage_rules_boost",
-    commit = "239ce40e42ab0e3fe7ce84c2e9303ff8a277c41a",
-    remote = "https://github.com/nelhage/rules_boost",
+    # commit = "239ce40e42ab0e3fe7ce84c2e9303ff8a277c41a",
+    commit = "31e908da255c368d2940823702c65076d1f419f6",
+    remote = "https://github.com/capriciousZihao/rules_boost",
 )
 
 load("@com_github_nelhage_rules_boost//:boost/boost.bzl", "boost_deps")
