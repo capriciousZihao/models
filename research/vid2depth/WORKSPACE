@@ -111,6 +111,7 @@ new_http_archive(
 # load("@com_github_nelhage_boost//:boost/boost.bzl", "boost_deps")
 # boost_deps()
 
+# boost
 git_repository(
     name = "com_github_nelhage_rules_boost",
     # commit = "239ce40e42ab0e3fe7ce84c2e9303ff8a277c41a",
@@ -121,6 +122,14 @@ git_repository(
 load("@com_github_nelhage_rules_boost//:boost/boost.bzl", "boost_deps")
 
 boost_deps()
+
+# graph part of boost
+new_git_repository(
+    name = "com_github_boost_graph",
+    build_file = "//third_party:boost_graph.BUILD",
+    commit = "4c752ee2f11c249e0d5b1fab8f0ef9da3428f575",
+    remote = "https://github.com/boostorg/graph.git",
+)
 
 # Eigen
 # Based on https://github.com/tensorflow/tensorflow/blob/master/third_party/eigen.BUILD
