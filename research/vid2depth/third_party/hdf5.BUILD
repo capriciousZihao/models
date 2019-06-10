@@ -7,7 +7,7 @@ licenses(["notice"])
 # configuration header file
 genrule(
   name = "configure_hdf5",
-  #srcs = glob(["**/*"], exclude=["src/H5pubconf.h", "src/libhdf5.settings", "src/libsettings.c"]),
+  srcs = glob(["**/*"], exclude=["src/H5pubconf.h", "src/libhdf5.settings", "src/libsettings.c"]),
   outs = ["src/H5pubconf.h", "src/libhdf5.settings"],
   cmd = "pushd external/hdf5/; workdir=$$(mktemp -d -t tmp.XXXXXXXXXX); cp -r * $$workdir; pushd $$workdir; ./configure; popd; popd; cp $$workdir/src/H5pubconf.h $$workdir/src/libhdf5.settings $(@D)/src; rm -rf $$workdir;",
   tools = ["configure"],
