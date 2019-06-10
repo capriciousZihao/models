@@ -143,19 +143,52 @@ FLANN_DEPS = BOOST_TARGETS + [
     "@hdf5//:hdf5",
 ]
 
+# make it matlab independent
+#cc_library(
+#    name = "flann",
+#    srcs = glob([
+#        "src/**/*.cpp",
+#    ]),
+#    hdrs = glob([
+#        "src/**/*.h",
+#        "src/**/*.hpp",
+#    ]),
+#    copts = FLANN_COPTS,
+#    includes = [
+#        "src/cpp",
+#    ],
+#    linkopts = ["-lgomp"],
+#    deps = FLANN_DEPS,
+#)
+
 cc_library(
     name = "flann",
     srcs = glob([
-        "src/**/*.cpp",
+        "src/cpp/flann/algorithms/*.cpp",
+        "src/cpp/flann/io/*.cpp",
+        "src/cpp/flann/nn/*.cpp",
+        "src/cpp/flann/util/*.cpp",
+        "src/cpp/flann/*.cpp",
     ]),
     hdrs = glob([
-        "src/**/*.h",
-        "src/**/*.hpp",
+        "src/cpp/flann/*.h",
+        "src/cpp/flann/*.hpp",
+        "src/cpp/flann/algorithms/*.h",
+        "src/cpp/flann/algorithms/*.hpp",
+        "src/cpp/flann/io/*.h",
+        "src/cpp/flann/io/*.hpp",
+        "src/cpp/flann/nn/*.h",
+        "src/cpp/flann/nn/*.hpp",
+        "src/cpp/flann/util/*.h",
+        "src/cpp/flann/util/*.hpp",
     ]),
     copts = FLANN_COPTS,
     includes = [
         "src/cpp",
     ],
-    linkopts = ["-lgomp"],
+    linkopts = ["-lgomp",],
     deps = FLANN_DEPS,
 )
+
+
+
