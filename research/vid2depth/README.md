@@ -1,3 +1,9 @@
+This branch comiles successfully with icp_op.so
+The main change happens in the WORKSPACE file, adopting a different boost rule.
+Compile environment:
+- Ubuntu 16.04
+- bazel 0.11.1
+
 # vid2depth
 
 **Unsupervised Learning of Depth and Ego-Motion from Monocular Video Using 3D Geometric Constraints**
