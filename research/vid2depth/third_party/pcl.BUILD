@@ -157,6 +157,7 @@ BOOST_TARGETS = [
     "@boost//:variant",
     "@boost//:version",
     "@boost//:visit_each",
+    "@com_github_boost_graph//:graph"
 ]
 
 cc_library(
